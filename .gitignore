@@ -1,0 +1,25 @@
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local Development
+node_modules/
+.env
+.env.local
+
+# Backup Files
+*.bak
+*.tmp
+*.old
+
+# Large Files (uncomment if needed)
+# *.blend
+# *.psd
