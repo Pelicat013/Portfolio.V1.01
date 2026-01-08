@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/project-modal.css">
     <link rel="stylesheet" href="css/scroll-animations.css">
+    <link rel="stylesheet" href="css/gallery-view-more.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -43,10 +44,10 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">
-                    <span class="title-line">.</span>
-                    <span class="title-line">.</span>
+                    <span class="title-line"></span>
+                    <span class="title-line"></span>
                 </h1>
-                <p class="hero-subtitle">4th Year Aerospace Student • CAD • Drones • 3D Design • Automation</p>
+                <p class="hero-subtitle">Aerospace Undergraduate • CAD • 3D Design • Automation • Drones</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
                     <a href="#contact" class="btn btn-secondary">Get in Touch</a>
@@ -55,11 +56,11 @@
 
             <div class="hero-stats">
                 <div class="stat-item">
-                    <span class="stat-number" data-count="15">0</span>
+                    <span class="stat-number" data-count="325">0</span>
                     <span class="stat-label">Projects</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number" data-count="500">0</span>
+                    <span class="stat-number" data-count="2000">0</span>
                     <span class="stat-label">Design Hours</span>
                 </div>
                 <div class="stat-item">
@@ -69,12 +70,12 @@
             </div>
         </div>
 
-        <div class="scroll-indicator">
+        <!-- <div class="scroll-indicator">
             <div class="mouse">
                 <div class="wheel"></div>
             </div>
             <p>Scroll to explore</p>
-        </div>
+        </div> -->
     </section>
 
     <!-- Project Gallery Section -->
@@ -91,68 +92,129 @@
             </div>
 
             <div class="gallery-grid" id="gallery-container">
-                <!-- Gallery items will be dynamically loaded from gallery-data.js -->
-                <!-- Or you can manually add items here -->
-
-                <!-- Example Aerospace Project -->
-                <div class="gallery-item" data-category="aerospace">
-                    <div class="gallery-image-placeholder">
-                        <p>Add images to assets/images/aerospace/</p>
-                        <span>VTOL Drone • ProjScarecrow</span>
-                    </div>
+                <!-- FP1: Aerospace Project -->
+                <div class="gallery-item" data-category="aerospace" data-project-id="FP1">
+                    <img src="assets/images/aerospace/Screenshot 2025-04-09 114043.png" alt="ProjScarecrow VTOL Drone">
                     <div class="gallery-info">
-                        <h3>ProjScarecrow VTOL</h3>
-                        <p>Aerospace Engineering • 3D Printed</p>
+                        <h3>ProjScarecrow VTOL Drone</h3>
+                        <p>Fixed-Wing VTOL • 3D Printed • INAV</p>
                     </div>
                 </div>
 
-                <!-- Example CAD Project -->
-                <div class="gallery-item" data-category="cad">
-                    <div class="gallery-image-placeholder">
-                        <p>Add images to assets/images/cad/</p>
-                        <span>SolidWorks Design</span>
-                    </div>
+                <!-- FP2: Aerospace Project -->
+                <div class="gallery-item" data-category="aerospace" data-project-id="FP2">
+                    <img src="assets/images/aerospace/image2.png" alt="Custom FPV Racing Drone">
                     <div class="gallery-info">
-                        <h3>Wing Assembly</h3>
-                        <p>CAD • SolidWorks</p>
+                        <h3>FPV Racing Drone Build</h3>
+                        <p>High-Performance Racing • Custom Configuration</p>
                     </div>
                 </div>
 
-                <!-- Example Render Project -->
-                <div class="gallery-item" data-category="renders">
-                    <div class="gallery-image-placeholder">
-                        <p>Add images to assets/images/renders/</p>
-                        <span>Blender Visualization</span>
-                    </div>
+                <!-- FP3: CAD Project -->
+                <div class="gallery-item" data-category="cad" data-project-id="FP3">
+                    <img src="assets/images/cad/Circulation8.png" alt="Aerodynamic Analysis">
                     <div class="gallery-info">
-                        <h3>3D Visualization</h3>
-                        <p>Blender • Rendering</p>
+                        <h3>Aerodynamic Flow Analysis</h3>
+                        <p>CFD Simulation • SolidWorks Flow</p>
                     </div>
                 </div>
 
-                <!-- Example Media Project -->
-                <div class="gallery-item" data-category="media">
-                    <div class="gallery-image-placeholder">
-                        <p>Add images to assets/images/media/</p>
-                        <span>Video Production</span>
-                    </div>
+                <!-- FP4: Render Project -->
+                <div class="gallery-item" data-category="renders" data-project-id="FP4">
+                    <img src="assets/images/automation/QuattroForest8kRender.png" alt="Audi Quattro Forest Render">
                     <div class="gallery-info">
-                        <h3>Video Content</h3>
-                        <p>Premiere Pro • Editing</p>
+                        <h3>Audi Quattro Forest Scene</h3>
+                        <p>Blender • 8K Cycles Rendering</p>
                     </div>
                 </div>
 
-                <!-- Example Automation Project -->
-                <div class="gallery-item" data-category="automation">
+                <!-- FP5: Media Project -->
+                <div class="gallery-item" data-category="media" data-project-id="FP5">
+                    <img src="assets/images/media/DSC04901.jpg" alt="Product Photography">
+                    <div class="gallery-info">
+                        <h3>Commercial Product Photography</h3>
+                        <p>Sony ZV-E10 • Studio Lighting</p>
+                    </div>
+                </div>
+
+                <!-- FP6: Media Project -->
+                <div class="gallery-item" data-category="media" data-project-id="FP6">
+                    <img src="assets/images/media/DSC04908.jpg" alt="Portrait Photography">
+                    <div class="gallery-info">
+                        <h3>Professional Portrait Series</h3>
+                        <p>Environmental Portraits • Natural Light</p>
+                    </div>
+                </div>
+
+                <!-- FP7: Automation Project -->
+                <div class="gallery-item" data-category="automation" data-project-id="FP7">
                     <div class="gallery-image-placeholder">
-                        <p>Add images to assets/images/automation/</p>
-                        <span>Data Analysis</span>
+                        <span style="opacity: 0.3; font-size: 0.8rem;">FP7</span>
                     </div>
                     <div class="gallery-info">
                         <h3>Golf Analytics Dashboard</h3>
-                        <p>Python • Data Visualization</p>
+                        <p>Python • Pandas • Data Visualization</p>
                     </div>
                 </div>
+
+                <!-- FP8: Media Project -->
+                <div class="gallery-item" data-category="media" data-project-id="FP8">
+                    <img src="assets/images/media/DSC04918.jpg" alt="Automotive Photography">
+                    <div class="gallery-info">
+                        <h3>Automotive Photography</h3>
+                        <p>Motion Blur • Panning Technique</p>
+                    </div>
+                </div>
+
+                <!-- FP9: Media Project -->
+                <div class="gallery-item" data-category="media" data-project-id="FP9">
+                    <img src="assets/images/media/DSC04928.jpg" alt="Landscape Photography">
+                    <div class="gallery-info">
+                        <h3>Landscape Photography Series</h3>
+                        <p>Long Exposure • Post-Processing</p>
+                    </div>
+                </div>
+
+                <!-- FP10: Aerospace Project -->
+                <div class="gallery-item" data-category="aerospace" data-project-id="FP10">
+                    <div class="gallery-image-placeholder">
+                        <span style="opacity: 0.3; font-size: 0.8rem;">FP10</span>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>VTOL Flight Control System</h3>
+                        <p>INAV • GPS Waypoint Navigation</p>
+                    </div>
+                </div>
+
+                <!-- FP11: CAD Project -->
+                <div class="gallery-item" data-category="cad" data-project-id="FP11">
+                    <div class="gallery-image-placeholder">
+                        <span style="opacity: 0.3; font-size: 0.8rem;">FP11</span>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Structural Wing Assembly</h3>
+                        <p>SolidWorks • FEA Analysis</p>
+                    </div>
+                </div>
+
+                <!-- FP12: Renders Project -->
+                <div class="gallery-item" data-category="renders" data-project-id="FP12">
+                    <div class="gallery-image-placeholder">
+                        <span style="opacity: 0.3; font-size: 0.8rem;">FP12</span>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>LMP1 Race Car Render</h3>
+                        <p>Blender • Studio Lighting • Photoshop</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View More Button -->
+            <div class="gallery-view-more">
+                <button class="btn btn-secondary" id="viewMoreBtn">
+                    <span class="view-more-text">View More Projects</span>
+                    <span class="view-more-count"></span>
+                </button>
             </div>
         </div>
     </section>
@@ -292,7 +354,7 @@
                 <div class="about-text">
                     <p>I'm a 4th-year Aerospace Engineering student with a passion for combining traditional engineering with modern technology. My work spans structural design, CAD modeling, 3D printing, drone development, and automation.</p>
 
-                    <p>I specialise in creating innovative solutions through a unique blend of aerospace knowledge, manufacturing expertise, and AI-assisted workflows. From designing VTOL drones to automating data analysis, I bring a multidisciplinary approach to technical challenges.</p>
+                    <p>I specialise in creating innovative solutions through a unique blend of aerospace knowledge, manufacturing expertise, and AI-assisted workflows. From designing drones to automating data analysis, I bring a multidisciplinary approach to technical challenges.</p>
 
                     <div class="highlight-projects">
                         <h3>Key Projects</h3>
@@ -360,6 +422,7 @@
     <script src="js/gallery-data.js"></script>
     <script src="js/project-modal.js"></script>
     <script src="js/scroll-animations.js"></script>
+    <script src="js/gallery-view-more.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
