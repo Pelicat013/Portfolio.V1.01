@@ -31,6 +31,10 @@ private/
 credentials/
 equipment-inventory/
 
-# Personal Notes
+# Personal Notes & Documentation
 notes/
 drafts/
+WORKFLOW*.md
+HOW-TO*.md
+PRIVACY*.md
+*-GUIDE.md
