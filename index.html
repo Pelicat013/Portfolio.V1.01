@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="3D Artist Portfolio - Automotive Design & Blender Renders">
-    <title>Portfolio | 3D Automotive Artist</title>
+    <meta name="description" content="Aerospace Engineering Student Portfolio - CAD, Drones, 3D Design & Automation">
+    <title>Portfolio | Aerospace Engineering & Technical Design</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -14,7 +14,8 @@
             <div class="logo">Portfolio</div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -36,28 +37,28 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">
-                    <span class="title-line">3D Automotive</span>
-                    <span class="title-line">Artist & Designer</span>
+                    <span class="title-line">Aerospace Engineering</span>
+                    <span class="title-line">& Technical Design</span>
                 </h1>
-                <p class="hero-subtitle">Crafting photorealistic car renders in Blender</p>
+                <p class="hero-subtitle">4th Year Aerospace Student • CAD • Drones • 3D Design • Automation</p>
                 <div class="hero-buttons">
-                    <a href="#gallery" class="btn btn-primary">View Work</a>
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
                     <a href="#contact" class="btn btn-secondary">Get in Touch</a>
                 </div>
             </div>
 
             <div class="hero-stats">
                 <div class="stat-item">
-                    <span class="stat-number" data-count="50">0</span>
+                    <span class="stat-number" data-count="15">0</span>
                     <span class="stat-label">Projects</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number" data-count="1000">0</span>
-                    <span class="stat-label">Hours Rendered</span>
+                    <span class="stat-number" data-count="500">0</span>
+                    <span class="stat-label">Design Hours</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number" data-count="25">0</span>
-                    <span class="stat-label">Car Models</span>
+                    <span class="stat-number" data-count="8">0</span>
+                    <span class="stat-label">Software Tools</span>
                 </div>
             </div>
         </div>
@@ -70,50 +71,236 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
+    <!-- Project Gallery Section -->
+    <section id="projects" class="gallery">
         <div class="container">
-            <h2 class="section-title">Featured Work</h2>
+            <h2 class="section-title">Featured Projects</h2>
             <div class="gallery-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="sports">Sports Cars</button>
-                <button class="filter-btn" data-filter="classic">Classic</button>
-                <button class="filter-btn" data-filter="concept">Concept</button>
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="aerospace">Aerospace</button>
+                <button class="filter-btn" data-filter="cad">CAD Design</button>
+                <button class="filter-btn" data-filter="renders">3D Renders</button>
+                <button class="filter-btn" data-filter="media">Media</button>
+                <button class="filter-btn" data-filter="automation">Automation</button>
             </div>
 
-            <div class="gallery-grid">
-                <!-- Gallery items will be added here -->
-                <div class="gallery-item" data-category="sports">
+            <div class="gallery-grid" id="gallery-container">
+                <!-- Gallery items will be dynamically loaded from gallery-data.js -->
+                <!-- Or you can manually add items here -->
+
+                <!-- Example Aerospace Project -->
+                <div class="gallery-item" data-category="aerospace">
                     <div class="gallery-image-placeholder">
-                        <p>Add your Blender render here</p>
-                        <span>Sports Car Render</span>
+                        <p>Add images to assets/images/aerospace/</p>
+                        <span>VTOL Drone • ProjScarecrow</span>
                     </div>
                     <div class="gallery-info">
-                        <h3>Project Title</h3>
-                        <p>Blender • Cycles Render</p>
+                        <h3>ProjScarecrow VTOL</h3>
+                        <p>Aerospace Engineering • 3D Printed</p>
                     </div>
                 </div>
 
-                <div class="gallery-item" data-category="classic">
+                <!-- Example CAD Project -->
+                <div class="gallery-item" data-category="cad">
                     <div class="gallery-image-placeholder">
-                        <p>Add your Blender render here</p>
-                        <span>Classic Car Render</span>
+                        <p>Add images to assets/images/cad/</p>
+                        <span>SolidWorks Design</span>
                     </div>
                     <div class="gallery-info">
-                        <h3>Project Title</h3>
-                        <p>Blender • EEVEE</p>
+                        <h3>Wing Assembly</h3>
+                        <p>CAD • SolidWorks</p>
                     </div>
                 </div>
 
-                <div class="gallery-item" data-category="concept">
+                <!-- Example Render Project -->
+                <div class="gallery-item" data-category="renders">
                     <div class="gallery-image-placeholder">
-                        <p>Add your Blender render here</p>
-                        <span>Concept Design</span>
+                        <p>Add images to assets/images/renders/</p>
+                        <span>Blender Visualization</span>
                     </div>
                     <div class="gallery-info">
-                        <h3>Project Title</h3>
-                        <p>Blender • Concept Art</p>
+                        <h3>3D Visualization</h3>
+                        <p>Blender • Rendering</p>
                     </div>
+                </div>
+
+                <!-- Example Media Project -->
+                <div class="gallery-item" data-category="media">
+                    <div class="gallery-image-placeholder">
+                        <p>Add images to assets/images/media/</p>
+                        <span>Video Production</span>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Video Content</h3>
+                        <p>Premiere Pro • Editing</p>
+                    </div>
+                </div>
+
+                <!-- Example Automation Project -->
+                <div class="gallery-item" data-category="automation">
+                    <div class="gallery-image-placeholder">
+                        <p>Add images to assets/images/automation/</p>
+                        <span>Data Analysis</span>
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Golf Analytics Dashboard</h3>
+                        <p>Python • Data Visualization</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+
+            <div class="skills-grid">
+                <!-- Aerospace Engineering -->
+                <div class="skill-category">
+                    <h3>Aerospace Engineering</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-name">Structural Design</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Flight Systems</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">FPV Drone Design</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Aerodynamics</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CAD & Manufacturing -->
+                <div class="skill-category">
+                    <h3>CAD & Manufacturing</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-name">SolidWorks</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">3D Printing</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">3D Scanning</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Prototyping</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Software & Media -->
+                <div class="skill-category">
+                    <h3>Software & Media</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-name">Blender</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Premiere Pro</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Photoshop</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Illustrator</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Programming & Automation -->
+                <div class="skill-category">
+                    <h3>Programming & Automation</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-name">Python</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">MATLAB</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">Bash Scripting</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">AI Tools (Claude Code)</div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Tags -->
+            <div class="tech-tags-section">
+                <h3>Technologies & Tools</h3>
+                <div class="tech-tags">
+                    <span class="tech-tag">SolidWorks</span>
+                    <span class="tech-tag">Blender</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">MATLAB</span>
+                    <span class="tech-tag">Adobe Suite</span>
+                    <span class="tech-tag">3D Printing</span>
+                    <span class="tech-tag">INAV/Mavlink</span>
+                    <span class="tech-tag">BambuLab P1s</span>
+                    <span class="tech-tag">EineStar Scanner</span>
+                    <span class="tech-tag">WSL/Linux</span>
+                    <span class="tech-tag">Git/GitHub</span>
+                    <span class="tech-tag">OBS Studio</span>
+                    <span class="tech-tag">Data Analysis</span>
+                    <span class="tech-tag">Flight Controllers</span>
+                    <span class="tech-tag">Composite Design</span>
                 </div>
             </div>
         </div>
@@ -125,19 +312,39 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>I'm a passionate 3D artist specializing in automotive visualization and photorealistic rendering using Blender.</p>
-                    <p>With a keen eye for detail and a love for cars, I create stunning visualizations that bring automotive designs to life.</p>
+                    <p>I'm a 4th-year Aerospace Engineering student with a passion for combining traditional engineering with modern technology. My work spans structural design, CAD modeling, 3D printing, drone development, and automation.</p>
 
-                    <div class="skills">
-                        <h3>Skills & Tools</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Blender</span>
-                            <span class="skill-tag">Cycles</span>
-                            <span class="skill-tag">EEVEE</span>
-                            <span class="skill-tag">Photoshop</span>
-                            <span class="skill-tag">3D Modeling</span>
-                            <span class="skill-tag">Texturing</span>
-                            <span class="skill-tag">Lighting</span>
+                    <p>I specialize in creating innovative solutions through a unique blend of aerospace knowledge, manufacturing expertise, and AI-assisted workflows. From designing VTOL drones to automating data analysis, I bring a multidisciplinary approach to technical challenges.</p>
+
+                    <div class="highlight-projects">
+                        <h3>Key Projects</h3>
+                        <ul>
+                            <li><strong>ProjScarecrow</strong> - Fixed-wing VTOL FPV drone with fully 3D-printed modular design</li>
+                            <li><strong>Golf Performance Analysis</strong> - Automated R10 launch monitor data processing and visualization</li>
+                            <li><strong>Technical Content Production</strong> - Video editing, graphics, and educational content creation</li>
+                            <li><strong>Process Automation</strong> - Custom scripts for data handling and workflow optimization</li>
+                        </ul>
+                    </div>
+
+                    <div class="equipment-section">
+                        <h3>Equipment & Capabilities</h3>
+                        <div class="equipment-grid">
+                            <div class="equipment-item">
+                                <h4>Design</h4>
+                                <p>High-spec workstation (RTX 4080, 64GB RAM), SolidWorks, Adobe Creative Suite</p>
+                            </div>
+                            <div class="equipment-item">
+                                <h4>Manufacturing</h4>
+                                <p>BambuLab P1s 3D Printer, EineStar 3D Scanner, composite materials</p>
+                            </div>
+                            <div class="equipment-item">
+                                <h4>Media</h4>
+                                <p>Sony ZV-E10 camera, DJI Mic 2, OBS Studio production setup</p>
+                            </div>
+                            <div class="equipment-item">
+                                <h4>Electronics</h4>
+                                <p>Flight controllers, FPV systems, motors, sensors, testing equipment</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -150,11 +357,12 @@
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
-                <p>Interested in working together or have a project in mind?</p>
+                <p>Interested in collaboration, internships, or technical projects?</p>
+                <p class="contact-subtitle">Available for immediate work opportunities</p>
                 <a href="mailto:pelicat013@gmail.com" class="btn btn-primary">Email Me</a>
 
                 <div class="social-links">
-                    <a href="#" class="social-link" aria-label="GitHub">
+                    <a href="https://github.com/Pelicat013" class="social-link" aria-label="GitHub" target="_blank">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                         </svg>
@@ -166,9 +374,11 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2026 Portfolio. All rights reserved.</p>
+        <p>&copy; 2026 Aerospace Engineering Portfolio. All rights reserved.</p>
     </footer>
 
+    <script src="js/gallery-config.js"></script>
+    <script src="js/gallery-data.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
