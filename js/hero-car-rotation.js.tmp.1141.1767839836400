@@ -222,9 +222,9 @@ document.addEventListener('DOMContentLoaded', () => {
         window.carRotation = new CarRotation({
             totalFrames: 91,           // 0-90 frames = 91 total
             defaultFrame: 45,          // Start at middle (frame 45)
-            imagePath: 'assets/LMP1HeroSequenceV1/',  // Path to image sequence
+            imagePath: 'assets/images/hero/car-rotation/frame_',
             imageFormat: 'png',        // or 'jpg'
-            frameDigits: 4            // 0000.png, 0001.png, etc.
+            frameDigits: 4            // frame_0000.png, frame_0001.png, etc.
         });
 
         console.log('Interactive car rotation initialized! (91 frames, starting at frame 45)');

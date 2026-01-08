@@ -215,10 +215,15 @@ body {
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 3;
     text-align: center;
     max-width: 1000px;
     padding: 2rem;
+    pointer-events: none; /* Allow mouse to pass through to car */
+}
+
+.hero-content * {
+    pointer-events: auto; /* But allow clicking on buttons */
 }
 
 /* Minimal hero content (when car is present) */
