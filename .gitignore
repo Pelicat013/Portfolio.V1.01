@@ -23,3 +23,14 @@ node_modules/
 # Large Files (uncomment if needed)
 # *.blend
 # *.psd
+
+# Private/Sensitive Files
+SKILLS_CONTEXT.md
+private/
+*.private.md
+credentials/
+equipment-inventory/
+
+# Personal Notes
+notes/
+drafts/
