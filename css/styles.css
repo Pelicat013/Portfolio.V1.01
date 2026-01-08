@@ -148,12 +148,87 @@ body {
     100% { transform: translate(50px, 50px); }
 }
 
+/* Interactive Car Container */
+.hero-car-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    max-width: 1400px;
+    height: 80vh;
+    z-index: 2;
+    cursor: ew-resize; /* Show left-right cursor */
+}
+
+.hero-car-container canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Car Loading Animation */
+.car-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    transition: opacity 0.3s;
+}
+
+.loader-spinner {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    border: 4px solid rgba(0, 212, 255, 0.2);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.car-loader p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.loader-progress {
+    width: 250px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.loader-bar {
+    height: 100%;
+    background: var(--gradient-1);
+    transition: width 0.3s ease;
+}
+
 .hero-content {
     position: relative;
     z-index: 1;
     text-align: center;
     max-width: 1000px;
     padding: 2rem;
+}
+
+/* Minimal hero content (when car is present) */
+.hero-content-minimal {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    max-width: 600px;
 }
 
 .hero-text {
