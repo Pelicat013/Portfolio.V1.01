@@ -70,30 +70,17 @@ class ScrollAnimations {
         });
     }
 
-    // Skill bar fill animations
+    // Skill bar pulsing gradient animations
     setupSkillBarObserver() {
         const skillItems = document.querySelectorAll('.skill-item');
-
-        // Store original widths and set to 0
-        skillItems.forEach(item => {
-            const progressBar = item.querySelector('.skill-progress');
-            if (progressBar) {
-                const targetWidth = progressBar.style.width;
-                progressBar.dataset.targetWidth = targetWidth;
-                progressBar.style.width = '0';
-            }
-        });
 
         const skillObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const progressBar = entry.target.querySelector('.skill-progress');
-                    if (progressBar && !progressBar.classList.contains('animated')) {
-                        // Animate to target width
-                        setTimeout(() => {
-                            progressBar.style.width = progressBar.dataset.targetWidth;
-                            progressBar.classList.add('animated');
-                        }, 100);
+                    if (progressBar && !progressBar.classList.contains('pulsing')) {
+                        // Add pulsing gradient effect
+                        progressBar.classList.add('pulsing');
                         skillObserver.unobserve(entry.target);
                     }
                 }
