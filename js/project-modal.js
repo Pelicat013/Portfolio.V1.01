@@ -5,6 +5,8 @@ class ProjectModal {
         this.modal = null;
         this.currentProject = null;
         this.currentImageIndex = 0;
+        this.slideshowTimer = null;
+        this.slideshowDelay = 15000; // 15 seconds
         this.init();
     }
 
@@ -110,6 +112,21 @@ class ProjectModal {
         this.modal.classList.remove('active');
         document.body.style.overflow = '';
         this.currentProject = null;
+        this.stopSlideshow();
+    }
+
+    startSlideshow() {
+        this.stopSlideshow();
+        this.slideshowTimer = setInterval(() => {
+            this.nextImage();
+        }, this.slideshowDelay);
+    }
+
+    stopSlideshow() {
+        if (this.slideshowTimer) {
+            clearInterval(this.slideshowTimer);
+            this.slideshowTimer = null;
+        }
     }
 
     extractProjectData(element) {
@@ -117,21 +134,77 @@ class ProjectModal {
         const title = element.querySelector('.gallery-info h3')?.textContent || 'Project';
         const description = element.querySelector('.gallery-info p')?.textContent || '';
         const category = element.getAttribute('data-category') || 'general';
+        const projectId = element.getAttribute('data-project-id') || 'FP1';
 
-        // Get images from element
-        const mainImage = element.querySelector('img')?.src || element.querySelector('.gallery-image-placeholder')?.style.backgroundImage;
+        // Get images from project-specific folder
+        const images = this.getProjectImages(projectId);
 
-        // You can extend this to pull from data attributes or a separate data source
         return {
             title,
             description,
             category,
-            images: [mainImage], // Will be extended
+            projectId,
+            images,
             fullDescription: this.getProjectDescription(title),
             techStack: this.getProjectTechStack(category),
             features: this.getProjectFeatures(title),
             links: []
         };
+    }
+
+    // Define images for each project - edit this to add/change images
+    getProjectImages(projectId) {
+        const projectImages = {
+            'FP1': [
+                'assets/images/projects/FP1/image1.jpg',
+                'assets/images/projects/FP1/image2.jpg',
+                'assets/images/projects/FP1/image3.jpg'
+            ],
+            'FP2': [
+                'assets/images/projects/FP2/image1.jpg',
+                'assets/images/projects/FP2/image2.jpg'
+            ],
+            'FP3': [
+                'assets/images/projects/FP3/image1.jpg'
+            ],
+            'FP4': [
+                'assets/images/projects/FP4/image1.jpg',
+                'assets/images/projects/FP4/image2.jpg',
+                'assets/images/projects/FP4/image3.jpg',
+                'assets/images/projects/FP4/image4.jpg'
+            ],
+            'FP5': [
+                'assets/images/projects/FP5/image1.jpg',
+                'assets/images/projects/FP5/image2.jpg',
+                'assets/images/projects/FP5/image3.jpg'
+            ],
+            'FP6': [
+                'assets/images/projects/FP6/image1.jpg'
+            ],
+            'FP7': [
+                'assets/images/projects/FP7/image1.jpg'
+            ],
+            'FP8': [
+                'assets/images/projects/FP8/image1.jpg'
+            ],
+            'FP9': [
+                'assets/images/projects/FP9/image1.jpg',
+                'assets/images/projects/FP9/image2.jpg'
+            ],
+            'FP10': [
+                'assets/images/projects/FP10/image1.jpg'
+            ],
+            'FP11': [
+                'assets/images/projects/FP11/image1.jpg'
+            ],
+            'FP12': [
+                'assets/images/projects/FP12/image1.jpg',
+                'assets/images/projects/FP12/image2.jpg'
+            ]
+        };
+
+        // Return images for this project, or placeholder if none
+        return projectImages[projectId] || ['assets/images/placeholder.jpg'];
     }
 
     populateModal(project) {
@@ -147,6 +220,11 @@ class ProjectModal {
 
         // Gallery
         this.populateGallery(project.images);
+
+        // Start slideshow
+        if (project.images.length > 1) {
+            this.startSlideshow();
+        }
 
         // Details
         const detailsHTML = `
@@ -191,9 +269,13 @@ class ProjectModal {
         const mainGallery = document.getElementById('galleryMain');
         const thumbsContainer = document.getElementById('galleryThumbs');
 
-        // Clear existing
+        // Clear existing images and thumbnails
         const existingImages = mainGallery.querySelectorAll('img');
         existingImages.forEach(img => img.remove());
+        thumbsContainer.innerHTML = '';
+
+        // Reset image index
+        this.currentImageIndex = 0;
 
         // Add images
         images.forEach((imgSrc, index) => {
@@ -208,26 +290,51 @@ class ProjectModal {
             const thumb = document.createElement('div');
             thumb.className = 'gallery-thumb' + (index === 0 ? ' active' : '');
             thumb.innerHTML = `<img src="${imgSrc}" alt="Thumbnail ${index + 1}">`;
-            thumb.addEventListener('click', () => this.showImage(index));
+            thumb.addEventListener('click', () => {
+                this.showImage(index);
+                this.startSlideshow(); // Restart slideshow on manual click
+            });
             thumbsContainer.appendChild(thumb);
         });
 
-        // Hide nav if only one image
-        document.getElementById('galleryPrev').style.display = images.length > 1 ? 'flex' : 'none';
-        document.getElementById('galleryNext').style.display = images.length > 1 ? 'flex' : 'none';
+        // Hide nav arrows if only one image
+        const prevBtn = document.getElementById('galleryPrev');
+        const nextBtn = document.getElementById('galleryNext');
+        if (prevBtn) prevBtn.style.display = images.length > 1 ? 'flex' : 'none';
+        if (nextBtn) nextBtn.style.display = images.length > 1 ? 'flex' : 'none';
+
+        // Show/hide thumbnail container if multiple images
+        if (images.length <= 1) {
+            thumbsContainer.style.display = 'none';
+        } else {
+            thumbsContainer.style.display = 'grid';
+        }
     }
 
     showImage(index) {
         const images = document.querySelectorAll('#galleryMain img');
         const thumbs = document.querySelectorAll('.gallery-thumb');
 
-        images.forEach(img => img.classList.remove('active'));
+        // Fade out current image
+        images.forEach(img => {
+            img.classList.remove('active');
+            img.style.opacity = '0';
+        });
         thumbs.forEach(thumb => thumb.classList.remove('active'));
 
-        images[index].classList.add('active');
-        thumbs[index].classList.add('active');
+        // Fade in new image after short delay
+        setTimeout(() => {
+            images[index].classList.add('active');
+            images[index].style.opacity = '1';
+            thumbs[index].classList.add('active');
+        }, 300);
 
         this.currentImageIndex = index;
+
+        // Scroll thumbnail into view if needed
+        if (thumbs[index]) {
+            thumbs[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
     }
 
     nextImage() {
