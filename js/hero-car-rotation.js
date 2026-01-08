@@ -5,13 +5,14 @@ class CarRotation {
     constructor(options = {}) {
         // Configuration
         this.container = options.container || document.querySelector('.hero-car-container');
-        this.totalFrames = options.totalFrames || 60; // Number of rendered frames
+        this.totalFrames = options.totalFrames || 91; // Number of rendered frames (0-90 = 91 frames)
+        this.defaultFrame = options.defaultFrame || Math.floor(this.totalFrames / 2); // Start at middle
         this.imagePath = options.imagePath || 'assets/images/hero/car-rotation/frame_';
         this.imageFormat = options.imageFormat || 'png'; // or 'jpg'
         this.frameDigits = options.frameDigits || 4; // e.g., frame_0001.png
 
         // State
-        this.currentFrame = 0;
+        this.currentFrame = this.defaultFrame;
         this.images = [];
         this.imagesLoaded = 0;
         this.isReady = false;
@@ -105,7 +106,7 @@ class CarRotation {
                 if (this.imagesLoaded === this.totalFrames) {
                     this.isReady = true;
                     this.hideLoading();
-                    this.drawFrame(0); // Draw first frame
+                    this.drawFrame(this.defaultFrame); // Draw default frame (middle position)
                     console.log('All frames loaded! Car rotation ready.');
                 }
             };
@@ -219,12 +220,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (carContainer) {
         // Initialize car rotation
         window.carRotation = new CarRotation({
-            totalFrames: 60,           // Change this to match your frame count
+            totalFrames: 91,           // 0-90 frames = 91 total
+            defaultFrame: 45,          // Start at middle (frame 45)
             imagePath: 'assets/images/hero/car-rotation/frame_',
             imageFormat: 'png',        // or 'jpg'
-            frameDigits: 4            // frame_0001.png = 4 digits
+            frameDigits: 4            // frame_0000.png, frame_0001.png, etc.
         });
 
-        console.log('Interactive car rotation initialized!');
+        console.log('Interactive car rotation initialized! (91 frames, starting at frame 45)');
     }
 });
